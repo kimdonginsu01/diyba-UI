@@ -1,0 +1,53 @@
+@import "../../components/GlobalStyles/Responsive/Responsive.scss";
+
+.wrapper {
+  background: #ffffff;
+  box-shadow: 0px 2px 4px rgba(225, 228, 233, 0.7);
+  border-radius: 14px;
+  min-height: 400px;
+  padding: 14px 24px 24px;
+
+  @include medium {
+    border-radius: 0;
+    padding: 10px;
+  }
+
+  & + .wrapper {
+    margin-top: 24px;
+  }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  line-height: 2.4rem;
+  color: #1c1c1c;
+}
+
+.badge {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  width: 16px;
+  height: 16px;
+  margin-left: 8px;
+  color: #fff;
+  background-color: var(--primary);
+  border-radius: 50%;
+}
+
+.minimize-btn {
+  cursor: pointer;
+}
+
+.small {
+  min-height: 193px;
+}

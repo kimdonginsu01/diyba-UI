@@ -1,0 +1,57 @@
+@import "normalize.css";
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+
+:root {
+  --primary: #f58e6a;
+  --border-color: #d6cfcd;
+  --border-color-soft: #cbd0dd;
+  --text-color-soft: #99908d;
+  --text-color: #1c1c1c;
+  --font-family: "Inter", sans-serif;
+
+  --sidebar-width: 256px;
+  --sidebar-tablet-width: 80px;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: 1.6rem;
+  line-height: 1.5;
+  text-rendering: optimizeSpeed;
+  overflow-y: overlay;
+}
+
+a,
+button {
+  text-decoration: none;
+  border: none;
+  outline: none;
+  color: var(--text-color);
+  font-family: var(--font-family);
+}
+
+// Custom scroll bar
+html *::-webkit-scrollbar {
+  border-radius: 0;
+  width: 8px;
+}
+
+html *::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.15);
+}
+
+html *::-webkit-scrollbar-track {
+  border-radius: 0;
+  background-color: rgba(0, 0, 0, 0);
+}

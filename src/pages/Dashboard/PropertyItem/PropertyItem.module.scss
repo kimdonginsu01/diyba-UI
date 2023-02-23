@@ -1,0 +1,178 @@
+@import "../../../components/GlobalStyles/Responsive/Responsive.scss";
+
+.wrapper {
+  display: flex;
+  min-height: 151px;
+  margin-top: 16px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+
+  @include small {
+  }
+
+  @include x-small {
+    flex-direction: column;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+  }
+}
+
+.image {
+  position: relative;
+
+  img {
+    height: 100%;
+
+    @include x-small {
+      width: 100%;
+    }
+  }
+
+  .tag {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    background-color: #7492ff;
+    color: #fff;
+    padding: 6px 8px;
+    border-radius: 4px;
+
+    @include large {
+      font-size: 1rem;
+    }
+
+    @include x-small {
+      left: unset;
+      right: 14px;
+    }
+  }
+}
+
+.info {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 16px;
+  position: relative;
+}
+
+.info-header {
+  h4 {
+    width: 260px;
+    font-weight: 600;
+
+    @include small {
+      width: 200px;
+      font-size: 1.4rem;
+    }
+  }
+
+  & ~ span {
+    font-size: 1.4rem;
+    color: var(--primary);
+    font-weight: 600;
+  }
+}
+
+.info-icon {
+  position: absolute;
+  right: 0;
+  top: 0;
+  stroke: #969696;
+}
+
+.description {
+  display: flex;
+  font-size: 1.2rem;
+
+  @include x-small {
+    margin-top: 6px;
+  }
+
+  .item {
+    display: flex;
+    align-items: center;
+
+    & + .item {
+      margin-left: 14px;
+    }
+
+    span {
+      margin-left: 8px;
+
+      @include small {
+        margin-left: 0;
+      }
+    }
+  }
+
+  & ~ p {
+    font-size: 12px;
+
+    @include small {
+      font-size: 1rem;
+    }
+
+    @include x-small {
+      margin-top: 6px;
+    }
+  }
+
+  @include large {
+    font-size: 1rem;
+  }
+
+  @include small {
+    justify-content: space-around;
+  }
+}
+
+.status {
+  width: 148px;
+  padding: 16px 12px;
+  font-size: 1.2rem;
+  background: #fff3ef;
+  border-radius: 0 8px 8px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  @include large {
+    display: none;
+  }
+
+  @include medium {
+    display: flex;
+  }
+
+  @include x-small {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}
+
+.status-item {
+  p {
+    display: flex;
+    align-items: center;
+  }
+
+  span {
+    font-size: 24px;
+    font-weight: 600;
+
+    @include medium {
+      font-size: 2rem;
+    }
+  }
+}
+
+.status-icon {
+  margin-right: 8px;
+}

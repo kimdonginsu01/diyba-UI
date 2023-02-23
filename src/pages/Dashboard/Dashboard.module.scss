@@ -1,0 +1,254 @@
+@import "../../components/GlobalStyles/Responsive/Responsive.scss";
+
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 100vh;
+  padding-left: 48px;
+  padding-right: 68px;
+
+  @include x-large {
+    padding-left: 32px;
+    padding-right: 52px;
+  }
+
+  @include large {
+    padding: 0;
+    margin-right: 16px;
+    margin-left: 16px;
+  }
+
+  @include medium {
+    margin: 0;
+  }
+
+  @include x-small {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.title {
+  font-weight: 500;
+  padding-top: 50px;
+  color: var(--text-color);
+
+  @include medium {
+    margin-left: 16px;
+  }
+
+  @include x-small {
+    margin-left: 16px;
+  }
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  margin-top: 32px;
+
+  @include large {
+    gap: 16px;
+  }
+
+  @include medium {
+    flex-wrap: wrap;
+  }
+
+  .left-content {
+    // max-width: 737px;
+
+    @include medium {
+      flex: 1;
+    }
+
+    .mobile-notifications {
+      display: none;
+      @include x-small {
+        display: block;
+      }
+    }
+  }
+
+  .right-content {
+    flex: 1;
+  }
+}
+
+.properties {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 32px;
+
+  @include large {
+    flex-wrap: wrap;
+    padding: 16px;
+  }
+}
+
+.properties-status {
+  display: flex;
+  flex-direction: column;
+
+  @include large {
+    width: 50%;
+    margin-top: 6px;
+  }
+
+  @include medium {
+    flex-wrap: wrap;
+  }
+}
+
+.status-header {
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+
+  p {
+    margin-left: 10px;
+  }
+}
+
+.value {
+  font-size: 2.8rem;
+  font-weight: 600;
+  margin-top: 14px;
+
+  @include large {
+    margin-top: 0;
+    font-size: 2.2rem;
+  }
+}
+
+.action-btn {
+  display: flex;
+  margin-top: 24px;
+
+  .save-search-btn {
+    padding: 6px;
+
+    @include large {
+      min-width: 100px;
+    }
+  }
+}
+
+// Notifications
+
+.noti-list {
+  margin-top: 20px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  position: relative;
+
+  @include medium {
+    border-left: none;
+    border-right: none;
+    border-radius: 0;
+  }
+
+  .next-btn {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 0 8px;
+  }
+}
+
+.noti-item {
+  padding: 16px;
+
+  @include medium {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .date {
+    font-size: 1.4rem;
+    color: var(--text-color-soft);
+
+    @include large {
+      font-size: 1.2rem;
+    }
+  }
+
+  .description {
+    margin-right: 12px;
+    font-size: 1.4rem;
+    line-height: 2.4rem;
+
+    @include large {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+// Pending properties
+
+.message {
+  margin-top: 36px;
+  p {
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: var(--text-color-soft);
+
+    @include large {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+.properties-button {
+  margin-top: 32px;
+}
+
+// Saved searches
+
+.searches-dropdown {
+  margin-top: 24px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  position: relative;
+
+  .icon {
+    display: flex;
+    align-items: center;
+    margin-right: 8px;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+  }
+}
+
+// Footer
+.footer {
+  font-size: 8px;
+  font-weight: 400;
+  padding-top: 38px;
+  padding-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+
+  .copyright {
+    a {
+      text-decoration: underline;
+    }
+  }
+}
+
+.trademarks {
+  display: flex;
+  align-items: center;
+
+  span {
+    margin-right: 8px;
+  }
+}

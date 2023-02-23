@@ -1,0 +1,45 @@
+@import "../../../components/GlobalStyles/Responsive/Responsive.scss";
+
+.wrapper {
+  margin-top: 16px;
+  padding: 16px;
+  font-size: 14px;
+  border: 1px solid #ebe6e6;
+  border-radius: 8px;
+  position: relative;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+
+  @include large {
+    font-size: 1.2rem;
+  }
+
+  & + .item {
+    margin-top: 16px;
+  }
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+}
+
+.label {
+  margin-left: 10px;
+}
+
+.value {
+  margin-left: 6px;
+  color: #585757;
+}
+
+.next-btn {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  margin-right: 8px;
+}

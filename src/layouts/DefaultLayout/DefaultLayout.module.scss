@@ -1,0 +1,23 @@
+@import "../../components/GlobalStyles/Responsive/Responsive.scss";
+
+.wrapper {
+  display: flex;
+  min-height: 100vh;
+}
+
+.app {
+  flex: 1;
+  margin-left: var(--sidebar-width);
+
+  @include x-large {
+    margin-left: var(--sidebar-tablet-width);
+  }
+
+  @include small {
+    margin-left: 0;
+  }
+}
+
+.main {
+  background-color: #f9f6f5;
+}
