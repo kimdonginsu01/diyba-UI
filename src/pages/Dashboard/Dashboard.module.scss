@@ -109,7 +109,7 @@
   align-items: center;
   font-size: 1.2rem;
 
-  p {
+  .header-label {
     margin-left: 10px;
   }
 }
@@ -193,7 +193,7 @@
 
 .message {
   margin-top: 36px;
-  p {
+  .message-content {
     font-size: 1.4rem;
     font-weight: 400;
     color: var(--text-color-soft);
@@ -238,7 +238,7 @@
   justify-content: space-between;
 
   .copyright {
-    a {
+    .copyright-link {
       text-decoration: underline;
     }
   }
@@ -248,7 +248,7 @@
   display: flex;
   align-items: center;
 
-  span {
+  .powered-by {
     margin-right: 8px;
   }
 }

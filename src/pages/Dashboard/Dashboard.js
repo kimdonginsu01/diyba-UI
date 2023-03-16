@@ -95,7 +95,7 @@ export default function Dashboard() {
                 <div key={index} className={cx("properties-status")}>
                   <div className={cx("status-header")}>
                     {item.icon}
-                    <p>{item.label}</p>
+                    <p className={cx("header-label")}>{item.label}</p>
                   </div>
                   <p className={cx("value")}>{item.value}</p>
                 </div>
@@ -156,7 +156,9 @@ export default function Dashboard() {
           {/* Pending properties */}
           <LayoutItem label="Pending properties" small>
             <div className={cx("message")}>
-              <p>You have no pending properties</p>
+              <p className={cx("message-content")}>
+                You have no pending properties
+              </p>
             </div>
             <Button
               className={cx("properties-button")}
@@ -207,10 +209,12 @@ export default function Dashboard() {
         <p className={cx("copyright")}>
           The market insights data is supplied by DIYBA Pty Ltd (ABN 35 641 308
           081) on behalf of PropTrack Pty Ltd (ABN 43 127 386 298).{" "}
-          <a href="/">Copyright and legal disclaimers about property data</a>
+          <a className="copyright-link" href="/">
+            Copyright and legal disclaimers about property data
+          </a>
         </p>
         <div className={cx("trademarks")}>
-          <span>Powered by: </span>
+          <span className={cx("powered-by")}>Powered by: </span>
           <img src={images.domainLogo} alt="" />
         </div>
       </div>

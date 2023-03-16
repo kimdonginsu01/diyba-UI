@@ -16,41 +16,43 @@ const cx = classNames.bind(styles);
 export default function WishlistItem({ tag = "" }) {
   return (
     <div className={cx("wrapper")}>
-      <div className={cx("image")}>
-        <img src={images.wishlistProperty} alt="" />
+      <div className={cx("wrapper-image")}>
+        <img className={cx("image")} src={images.wishlistProperty} alt="" />
       </div>
 
       <div className={cx("info")}>
         <div className={cx("info-header")}>
-          <h4>31 Newry Street Mountain Creek QLD 4557</h4>
+          <h4 className={cx("info-content")}>
+            31 Newry Street Mountain Creek QLD 4557
+          </h4>
         </div>
         <div className={cx("action-btn")}>
           <ArrowRightIcon className={cx("info-icon")} />
           <WishlistIcon className={cx("info-icon", "fill")} />
         </div>
-        <span>Offer from $ 389,000</span>
+        <span className={cx("offer-from")}>Offer from $ 389,000</span>
         <div className={cx("description")}>
           <div className={cx("item")}>
             {<BedroomIcon />}
-            <span>
+            <span className={cx("item-content")}>
               <strong>4</strong> beds
             </span>
           </div>
           <div className={cx("item")}>
             {<BathroomIcon />}
-            <span>
+            <span className={cx("item-content")}>
               <strong>4</strong> baths
             </span>
           </div>
           <div className={cx("item")}>
             {<CarParkIcon />}
-            <span>
+            <span className={cx("item-content")}>
               <strong>4</strong> parks
             </span>
           </div>
           <div className={cx("item")}>
             {<AreaIcon />}
-            <span>
+            <span className={cx("item-content")}>
               <strong>579</strong> m2
             </span>
           </div>
@@ -58,27 +60,29 @@ export default function WishlistItem({ tag = "" }) {
         <div className={cx("potential-value")}>
           <div className={cx("header")}>
             <PotentialValueIcon />
-            <p>Potential value:</p>
+            <p className={cx("header-content")}>Potential value:</p>
           </div>
           {tag ? (
             <div className={cx("content")}>
               <div className={cx("item")}>
-                <p>Low range</p>
-                <span>$340,000</span>
+                <p className={cx("range")}>Low range</p>
+                <span className={cx("price")}>$340,000</span>
               </div>
               <div className={cx("item")}>
-                <p>Mid range</p>
-                <span>$365,000</span>
+                <p className={cx("range")}>Mid range</p>
+                <span className={cx("price")}>$365,000</span>
               </div>
               <div className={cx("item")}>
-                <p>High range</p>
-                <span>$395,000</span>
+                <p className={cx("range")}>High range</p>
+                <span className={cx("price")}>$395,000</span>
               </div>
               <p className={cx("tag", { [tag]: tag })}>{tag} Confidence</p>
             </div>
           ) : (
             <div className={cx("no-value")}>
-              <p>View property for updated values</p>
+              <p className={cx("no-value-text")}>
+                View property for updated values
+              </p>
               <ArrowRightIcon />
             </div>
           )}

@@ -18,10 +18,10 @@
   }
 }
 
-.image {
+.wrapper-image {
   position: relative;
 
-  img {
+  .image {
     height: 100%;
 
     @include x-small {
@@ -62,7 +62,7 @@
 }
 
 .info-header {
-  h4 {
+  .info-content {
     width: 260px;
     font-weight: 600;
 
@@ -72,7 +72,7 @@
     }
   }
 
-  & ~ span {
+  & ~ .offer {
     font-size: 1.4rem;
     color: var(--primary);
     font-weight: 600;
@@ -102,7 +102,7 @@
       margin-left: 14px;
     }
 
-    span {
+    .item-content {
       margin-left: 8px;
 
       @include small {
@@ -111,7 +111,7 @@
     }
   }
 
-  & ~ p {
+  & ~ .owned-since {
     font-size: 12px;
 
     @include small {
@@ -158,12 +158,12 @@
 }
 
 .status-item {
-  p {
+  .item-header {
     display: flex;
     align-items: center;
   }
 
-  span {
+  .item-content {
     font-size: 24px;
     font-weight: 600;
 

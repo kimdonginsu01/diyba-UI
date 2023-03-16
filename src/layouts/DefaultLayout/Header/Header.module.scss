@@ -19,7 +19,7 @@
   align-items: center;
   cursor: pointer;
 
-  span {
+  .hide-menu-text {
     margin-left: 19px;
     font-size: 1.4rem;
 
@@ -64,11 +64,11 @@
   justify-content: center;
   margin-right: 15px;
 
-  p {
+  .name {
     color: #4c5363;
     font-weight: 500;
   }
-  span {
+  .role {
     font-size: 1.2rem;
   }
 
@@ -84,7 +84,7 @@
     display: flex;
     align-items: center;
 
-    img {
+    .logo {
       width: 88px;
     }
   }

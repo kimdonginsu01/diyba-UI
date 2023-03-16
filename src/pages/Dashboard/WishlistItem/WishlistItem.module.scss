@@ -27,9 +27,9 @@
   }
 }
 
-.image {
+.wrapper-image {
   height: 100%;
-  img {
+  .image {
     height: 100%;
 
     @include x-small {
@@ -48,7 +48,7 @@
 }
 
 .info-header {
-  h4 {
+  .info-content {
     width: 260px;
     font-weight: 600;
 
@@ -58,7 +58,7 @@
     }
   }
 
-  & ~ span {
+  & ~ .offer-from {
     font-size: 1.4rem;
     color: var(--primary);
     font-weight: 600;
@@ -105,13 +105,9 @@
       margin-left: 14px;
     }
 
-    span {
+    .item-content {
       margin-left: 8px;
     }
-  }
-
-  & ~ p {
-    font-size: 12px;
   }
 }
 
@@ -134,7 +130,7 @@
     display: flex;
     align-items: center;
 
-    p {
+    .header-content {
       margin-left: 9px;
       font-size: 1.4rem;
       font-weight: 600;
@@ -160,12 +156,12 @@
 
     .item {
       font-weight: 600;
-      p {
+      .range {
         font-size: 10px;
         color: var(--primary);
         line-height: 1.2rem;
       }
-      span {
+      .price {
         font-size: 14px;
         color: #585757;
       }
@@ -207,7 +203,7 @@
   align-items: center;
   justify-content: space-between;
 
-  p {
+  .no-value-text {
     font-size: 1.4rem;
     font-weight: 500;
 

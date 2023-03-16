@@ -16,15 +16,15 @@ export default function Header() {
       <div className={cx("hide-menu")}>
         <HideMenuIcon className={cx("hide-menu-icon")} />
         <ShowMenuIcon className={cx("show-menu-icon")} />
-        <span>Hide menu</span>
+        <span className={cx("hide-menu-text")}>Hide menu</span>
       </div>
       <div className={cx("mobile-logo")}>
-        <img src={images.logo} alt="" />
+        <img className={cx("logo")} src={images.logo} alt="" />
       </div>
       <div className={cx("user")}>
         <div className={cx("username")}>
-          <p>Bill Smith</p>
-          <span>Owner</span>
+          <p className={cx("name")}>Bill Smith</p>
+          <span className={cx("role")}>Owner</span>
         </div>
         <UserIcon className={cx("user-ava")} />
       </div>
