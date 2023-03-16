@@ -19,6 +19,12 @@
   align-items: center;
   cursor: pointer;
 
+  @include x-small {
+    margin-left: -10px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
   .hide-menu-text {
     margin-left: 19px;
     font-size: 1.4rem;

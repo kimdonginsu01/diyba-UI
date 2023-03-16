@@ -1,6 +1,6 @@
 import classNames from "classnames/bind";
-import styles from "./Header.module.scss";
 import images from "../../../assets/img";
+import styles from "./Header.module.scss";
 
 import {
   HideMenuIcon,
@@ -10,10 +10,10 @@ import {
 
 const cx = classNames.bind(styles);
 
-export default function Header() {
+export default function Header({ onMenuClick }) {
   return (
     <header className={cx("wrapper")}>
-      <div className={cx("hide-menu")}>
+      <div className={cx("hide-menu")} onClick={onMenuClick}>
         <HideMenuIcon className={cx("hide-menu-icon")} />
         <ShowMenuIcon className={cx("show-menu-icon")} />
         <span className={cx("hide-menu-text")}>Hide menu</span>
