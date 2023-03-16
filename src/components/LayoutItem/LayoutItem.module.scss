@@ -8,8 +8,13 @@
   padding: 14px 24px 24px;
 
   @include medium {
-    border-radius: 0;
+    border-radius: 8px;
     padding: 10px;
+  }
+
+  @include x-small {
+    padding-right: 0;
+    padding-left: 0;
   }
 
   & + .wrapper {
@@ -29,6 +34,10 @@
   font-weight: 500;
   line-height: 2.4rem;
   color: #1c1c1c;
+
+  @include small {
+    margin-left: 14px;
+  }
 }
 
 .badge {

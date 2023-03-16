@@ -88,6 +88,13 @@
     flex-wrap: wrap;
     padding: 16px;
   }
+
+  @include x-small {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-radius: 0;
+  }
 }
 
 .properties-status {
@@ -97,10 +104,18 @@
   @include large {
     width: 50%;
     margin-top: 6px;
+    padding-left: 80px;
   }
 
   @include medium {
     flex-wrap: wrap;
+  }
+
+  @include x-small {
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 }
 
@@ -136,6 +151,10 @@
       min-width: 100px;
     }
   }
+
+  @include x-small {
+    margin-left: 14px;
+  }
 }
 
 // Notifications
@@ -146,7 +165,7 @@
   border-radius: 8px;
   position: relative;
 
-  @include medium {
+  @include small {
     border-left: none;
     border-right: none;
     border-radius: 0;
@@ -165,8 +184,8 @@
   padding: 16px;
 
   @include medium {
-    padding-left: 0;
-    padding-right: 0;
+    // padding-left: 0;
+    // padding-right: 0;
   }
 
   .date {

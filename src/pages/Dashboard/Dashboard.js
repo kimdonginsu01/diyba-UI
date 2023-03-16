@@ -72,7 +72,7 @@ export default function Dashboard() {
       <div className={cx("container")}>
         <div className={cx("left-content")}>
           {/* Mobile notifications */}
-          {windowSize.innerWidth <= 992 && (
+          {windowSize.innerWidth <= 900 && (
             <LayoutItem label="Notification" badge={2} small>
               <div className={cx("noti-list")}>
                 <div className={cx("noti-item")}>
@@ -137,7 +137,7 @@ export default function Dashboard() {
 
         <div className={cx("right-content")}>
           {/* Notifications */}
-          {windowSize.innerWidth > 992 && (
+          {windowSize.innerWidth > 900 && (
             <LayoutItem label="Notification" badge={2} small>
               <div className={cx("noti-list")}>
                 <div className={cx("noti-item")}>
