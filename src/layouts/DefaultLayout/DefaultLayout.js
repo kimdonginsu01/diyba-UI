@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import styles from "./DefaultLayout.module.scss";
 
 import Header from "./Header";
-import MobileMenu from "./MobileMenu/MobileMenu";
 import Sidebar from "./Sidebar";
 
 const cx = classNames.bind(styles);
@@ -14,7 +13,7 @@ function getWindowSize() {
 }
 
 export default function DefaultLayout({ children }) {
-  const [menuActive, setMenuActive] = useState(false);
+  const [menuActive, setMenuActive] = useState(true);
   const [windowSize, setWindowSize] = useState(getWindowSize());
 
   useEffect(() => {
@@ -29,17 +28,20 @@ export default function DefaultLayout({ children }) {
     };
   }, []);
 
+  useEffect(() => {
+    windowSize.innerWidth < 1400 && setMenuActive(() => false);
+  }, [windowSize]);
+
   const handleMenuClick = () => {
-    windowSize.innerWidth < 576 && setMenuActive(!menuActive);
+    setMenuActive(!menuActive);
   };
 
   return (
     <div className={cx("wrapper")}>
-      <Sidebar />
-      <div className={cx("app")}>
-        <Header onMenuClick={handleMenuClick} />
+      <Sidebar menuActive={menuActive} onMenuClick={handleMenuClick} />
+      <div className={cx("app", menuActive || "sm-margin")}>
+        <Header onMenuClick={handleMenuClick} menuActive={menuActive} />
         <div className={cx("main")}>{children}</div>
-        {menuActive && <MobileMenu onMenuClick={handleMenuClick} />}
       </div>
     </div>
   );

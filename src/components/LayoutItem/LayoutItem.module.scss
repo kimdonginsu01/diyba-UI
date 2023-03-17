@@ -9,7 +9,6 @@
 
   @include medium {
     border-radius: 8px;
-    padding: 10px;
   }
 
   @include x-small {
@@ -26,6 +25,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  @include small {
+    margin-left: 14px;
+    margin-right: 14px;
+  }
 }
 
 .label {
@@ -34,10 +38,6 @@
   font-weight: 500;
   line-height: 2.4rem;
   color: #1c1c1c;
-
-  @include small {
-    margin-left: 14px;
-  }
 }
 
 .badge {

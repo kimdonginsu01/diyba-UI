@@ -4,8 +4,46 @@
   --sidebar-devider-spacer: 40px;
 }
 
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-180px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.modal {
+  @include medium {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 999;
+    background: rgba(17, 22, 44, 0.6);
+    backdrop-filter: blur(4px);
+    height: 100vh;
+  }
+}
+
+.close-icon {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 16px;
+  display: none;
+
+  @include medium {
+    display: block;
+  }
+}
+
 .wrapper {
-  min-width: var(--sidebar-width);
+  min-width: var(--sidebar-tablet-width);
   height: 100vh;
   position: fixed;
   left: 0;
@@ -13,10 +51,32 @@
   z-index: 1;
   background: #fdfaf9;
   border-right: 1px solid var(--border-color);
+  transition: all 0.1s ease-in-out;
 
-  @include x-large {
-    width: var(--sidebar-tablet-width);
-    min-width: var(--sidebar-tablet-width);
+  &.active {
+    min-width: var(--sidebar-width);
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    background: #fdfaf9;
+    border-right: 1px solid var(--border-color);
+    display: block;
+
+    @include medium {
+      background-color: #fff;
+      position: absolute;
+      top: 0;
+      right: 40%;
+      left: 0;
+      bottom: 0;
+      animation: slideIn 0.2s ease-in-out;
+    }
+
+    @include x-small {
+      right: 20%;
+    }
   }
 
   @include small {
@@ -30,22 +90,18 @@
   margin-top: 29px;
 }
 
-.logo {
-  margin-top: 24px;
-  margin-left: 34px;
-
-  @include x-large {
-    display: none;
-  }
+.logo-wrapper {
+  display: flex;
+  justify-content: center;
 }
 
-.logo-sm {
-  margin: 0 auto;
+.logo {
+  height: 42px;
   margin-top: 24px;
-  display: none;
 
-  @include x-large {
-    display: block;
+  @include small {
+    width: 88px;
+    height: unset;
   }
 }
 
@@ -62,13 +118,13 @@
   color: #585757;
   cursor: pointer;
 
-  @include x-large {
-    justify-content: center;
+  @include medium {
+    max-width: 60%;
   }
 
-  @include x-small {
+  @include small {
     justify-content: unset;
-    max-width: 90%;
+    max-width: 80%;
   }
 
   &:hover {
@@ -115,17 +171,11 @@
       background-color: var(--border-color);
     }
   }
-}
 
-.icon {
-  display: flex;
-  margin-left: 17px;
-  margin-right: 14px;
-}
-
-@include x-large {
-  .label {
-    display: none;
+  .icon {
+    display: flex;
+    margin-left: 17px;
+    margin-right: 14px;
   }
 }
 

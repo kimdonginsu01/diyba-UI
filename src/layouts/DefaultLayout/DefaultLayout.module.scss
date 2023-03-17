@@ -9,12 +9,12 @@
   flex: 1;
   margin-left: var(--sidebar-width);
 
-  @include x-large {
+  &.sm-margin {
     margin-left: var(--sidebar-tablet-width);
-  }
 
-  @include small {
-    margin-left: 0;
+    @include small {
+      margin-left: 0;
+    }
   }
 }
 

@@ -36,25 +36,6 @@
 
   .hide-menu-icon {
     display: block;
-
-    @include small {
-      display: none;
-    }
-  }
-
-  .show-menu-icon {
-    display: none;
-    @include small {
-      display: block;
-    }
-  }
-}
-
-.show-menu-icon {
-  display: none;
-
-  @include small {
-    display: block;
   }
 }
 

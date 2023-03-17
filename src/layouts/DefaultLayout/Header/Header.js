@@ -10,14 +10,20 @@ import {
 
 const cx = classNames.bind(styles);
 
-export default function Header({ onMenuClick }) {
+export default function Header({ menuActive, onMenuClick }) {
   return (
     <header className={cx("wrapper")}>
-      <div className={cx("hide-menu")} onClick={onMenuClick}>
-        <HideMenuIcon className={cx("hide-menu-icon")} />
-        <ShowMenuIcon className={cx("show-menu-icon")} />
-        <span className={cx("hide-menu-text")}>Hide menu</span>
-      </div>
+      {menuActive ? (
+        <div className={cx("hide-menu")} onClick={onMenuClick}>
+          <HideMenuIcon className={cx("hide-menu-icon")} />
+          <span className={cx("hide-menu-text")}>Hide menu</span>
+        </div>
+      ) : (
+        <div className={cx("hide-menu")} onClick={onMenuClick}>
+          <ShowMenuIcon className={cx("show-menu-icon")} />
+          <span className={cx("hide-menu-text")}>Show menu</span>
+        </div>
+      )}
       <div className={cx("mobile-logo")}>
         <img className={cx("logo")} src={images.logo} alt="" />
       </div>

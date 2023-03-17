@@ -7,6 +7,7 @@ import images from "../../../assets/img";
 import MenuItem from "./MenuItem/MenuItem";
 import {
   AccountIcon,
+  CloseIcon,
   ContactIcon,
   DashboardIcon,
   LogoutIcon,
@@ -68,27 +69,46 @@ const menuItem = [
   },
 ];
 
-export default function Sidebar() {
+export default function Sidebar({ menuActive, onMenuClick }) {
   return (
-    <section className={cx("wrapper")}>
-      <Link to="/">
-        <img src={images.logo} alt="" className={cx("logo")} />
-        <img src={images.logoSm} alt="" className={cx("logo-sm")} />
-      </Link>
-      <div className={cx("menu")}>
-        {menuItem.map((item, index) => (
-          <NavLink key={index} to={item.to}>
-            {({ isActive }) => (
-              <MenuItem
-                icon={item.icon}
-                label={item.label}
-                isActive={isActive}
-                topDevider={item.topDevider}
+    <div className={cx(menuActive && "modal")} onClick={onMenuClick}>
+      <section
+        className={cx("wrapper", menuActive && "active")}
+        onClick={(e) => e.stopPropagation()}
+      >
+        <Link to="/">
+          <div className={cx("logo-wrapper")}>
+            {menuActive ? (
+              <img src={images.logo} alt="" className={cx("logo")} />
+            ) : (
+              <img
+                src={images.logoSm}
+                alt=""
+                className={cx("logo", "logo-sm")}
               />
             )}
-          </NavLink>
-        ))}
-      </div>
-    </section>
+          </div>
+        </Link>
+        <div className={cx("menu")}>
+          {menuItem.map((item, index) => (
+            <NavLink key={index} to={item.to}>
+              {({ isActive }) => (
+                <MenuItem
+                  icon={item.icon}
+                  label={(menuActive && item.label) || ""}
+                  isActive={isActive}
+                  topDevider={item.topDevider}
+                />
+              )}
+            </NavLink>
+          ))}
+        </div>
+        {menuActive && (
+          <div className={cx("close-icon")} onClick={onMenuClick}>
+            <CloseIcon />
+          </div>
+        )}
+      </section>
+    </div>
   );
 }
